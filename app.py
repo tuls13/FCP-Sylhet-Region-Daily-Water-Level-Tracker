@@ -13,7 +13,7 @@ from stations import STATION_MAPPING
 app = Flask(__name__)
 API_URL = "https://api.ffwc.gov.bd/data_load/seven-days-forecast-waterlevel-24-hours/"
 
-# 1) Build STATION_MAP using the correct key "dangerlevel"
+# Build STATION_MAP using the correct key "dangerlevel"
 STATION_MAP = {
     station['id']: {
         "name": station['name'],
@@ -120,5 +120,5 @@ def index():
 
 if __name__ == "__main__":
     import os
-    port = int(os.environ.get("PORT", 5000))
+    port = int(os.environ.get("PORT", 5000))  # Render sets this automatically
     app.run(host="0.0.0.0", port=port)
